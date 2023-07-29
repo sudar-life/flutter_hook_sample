@@ -1,7 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:flutter_hooks_sample_app/src/pages/use_animation_page.dart';
+import 'package:flutter_hooks_sample_app/src/pages/use_callback.dart';
 import 'package:flutter_hooks_sample_app/src/pages/use_effect.dart';
+import 'package:flutter_hooks_sample_app/src/pages/use_future.dart';
 import 'package:flutter_hooks_sample_app/src/pages/use_memoized.dart';
+import 'package:flutter_hooks_sample_app/src/pages/use_reducer.dart';
+import 'package:flutter_hooks_sample_app/src/pages/use_scrollcontroller.dart';
+import 'package:flutter_hooks_sample_app/src/pages/use_single_ticker_provider_page.dart';
 import 'package:flutter_hooks_sample_app/src/pages/use_state.dart';
+import 'package:flutter_hooks_sample_app/src/pages/use_stream.dart';
+import 'package:flutter_hooks_sample_app/src/pages/use_tab_controller.dart';
+import 'package:flutter_hooks_sample_app/src/pages/use_text_editing_controller.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -33,7 +43,6 @@ class Home extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              title('Existing hooks'),
               ElevatedButton(
                 onPressed: () {
                   pushPage(context, const UseStatePage());
@@ -52,12 +61,51 @@ class Home extends StatelessWidget {
                 },
                 child: const Text('useMemoized'),
               ),
-              ElevatedButton(onPressed: () {}, child: const Text('useRef')),
               ElevatedButton(
-                  onPressed: () {}, child: const Text('useCallback')),
-              ElevatedButton(onPressed: () {}, child: const Text('useContext')),
+                  onPressed: () {
+                    pushPage(context, UseCallBackPage());
+                  },
+                  child: const Text('useCallback')),
               ElevatedButton(
-                  onPressed: () {}, child: const Text('useVAlueChanged')),
+                  onPressed: () {
+                    pushPage(context, UseStreamPage());
+                  },
+                  child: const Text('useStream')),
+              ElevatedButton(
+                  onPressed: () {
+                    pushPage(context, UseFuturePage());
+                  },
+                  child: const Text('useFuture')),
+              ElevatedButton(
+                  onPressed: () {
+                    pushPage(context, useTabControllerPage());
+                  },
+                  child: const Text('useTabController')),
+              ElevatedButton(
+                  onPressed: () {
+                    pushPage(context, UseSingleTickerProviderPage());
+                  },
+                  child: const Text('useSingleTickerProvider')),
+              ElevatedButton(
+                  onPressed: () {
+                    pushPage(context, UseAnimationPage());
+                  },
+                  child: const Text('useAnimation')),
+              ElevatedButton(
+                  onPressed: () {
+                    pushPage(context, UseReducerPage());
+                  },
+                  child: const Text('useReducer')),
+              ElevatedButton(
+                  onPressed: () {
+                    pushPage(context, UseScrollControllerPage());
+                  },
+                  child: const Text('useScrollController')),
+              ElevatedButton(
+                  onPressed: () {
+                    pushPage(context, UseTextEditingControllerPage());
+                  },
+                  child: const Text('useTextEditingController')),
             ],
           ),
         ),
