@@ -9,8 +9,9 @@ class UseFuturePage extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
+    var future = useMemoized(() => futureEvent());
     var count = useState(0);
-    var snapshot = useFuture(futureEvent(), initialData: 5);
+    var snapshot = useFuture(future, initialData: 5);
     print('build');
     return Scaffold(
       appBar: AppBar(
