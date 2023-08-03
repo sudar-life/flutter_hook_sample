@@ -8,9 +8,14 @@ class UseEffectPage extends HookWidget {
   UseEffectPage({super.key});
   int specificValue = 0;
 
+  void test() {
+    print('test 호출');
+  }
+
   @override
   Widget build(BuildContext context) {
     final counter = useState(0);
+    test();
     useEffect(() {
       print('useEffect 발동!!');
       return () {};

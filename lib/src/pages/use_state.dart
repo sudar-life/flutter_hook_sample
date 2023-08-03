@@ -44,9 +44,8 @@ class _UseStatePageState extends State<UseStatePage> {
         style: const TextStyle(fontSize: 80),
       )),
       floatingActionButton: FloatingActionButton(onPressed: () {
-        setState(() {
-          counter++;
-        });
+        counter++;
+        setState(() {});
       }),
     );
   }

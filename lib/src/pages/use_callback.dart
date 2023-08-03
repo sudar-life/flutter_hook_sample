@@ -15,7 +15,7 @@ class UseCallBackPage extends HookWidget {
     var count = useState(0);
     var callback = useMemoized(() {
       print('memorize');
-      return add;
+      return add(2, 5);
     }, []);
     // var callback = useCallback(() {
     //   print('callback');
@@ -25,11 +25,11 @@ class UseCallBackPage extends HookWidget {
     print('rebuild');
     return Scaffold(
       appBar: AppBar(
-        title: const Text('useState'),
+        title: const Text('useCallback'),
       ),
       body: Center(
         child: Text(
-          callback(5, 5).toString(),
+          callback.toString(),
           style: const TextStyle(fontSize: 80),
         ),
       ),
